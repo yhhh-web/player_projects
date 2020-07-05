@@ -4,7 +4,7 @@
       <h3 class="title">mv详情</h3>
       <!-- mv -->
       <div class="video-wrap">
-        <video controls :src="url"></video>
+        <video controls :src="url" autoplay></video>
       </div>
       <!-- mv信息 -->
       <div class="info-wrap">
@@ -166,4 +166,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

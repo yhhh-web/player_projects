@@ -6,10 +6,7 @@
         <span class="iconfont icon-sami-select"></span>
         <span class="iconfont icon-full-screen"></span>
       </div>
-      <div class="history-wrapper">
-        <span class="iconfont icon-arrow-lift"></span>
-        <span class="iconfont icon-arrow-right"></span>
-      </div>
+      
       <div class="img-top"><img src="../assets/top.png"></div>
     </div>
     <div class="right-box">
@@ -50,4 +47,8 @@
   }
 </script>
 
-<style scoped></style>
+<style scoped>
+.img-top img{
+  float:right;
+}
+</style>

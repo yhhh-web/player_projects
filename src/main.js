@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import App from './App.vue'
+
 
 Vue.config.productionTip = false
-import VueRouter from 'vue-router'
+
 Vue.use(VueRouter);
 import discovery from './components/03.discovery.vue'
 import playlists from './components/04.playlists.vue'
@@ -14,7 +14,8 @@ import mv from './components/09.mv.vue'
 //导入element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
-
+import App from './App.vue'
+import VueRouter from 'vue-router'
 let router = new VueRouter({
 
 routes:[
