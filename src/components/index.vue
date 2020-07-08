@@ -52,6 +52,74 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
+.index-container {
+  display: flex;
+}
+
+.index-container .nav {
+  background-color: #ededed;
+  width: 200px;
+  height: 100%;
+}
+
+.index-container .nav li {
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.index-container .nav li:hover {
+  background-color: #e7e7e7;
+}
+
+.index-container .nav li .iconfont {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.index-container .nav li a {
+  color: black;
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 60px;
+  width: 100%;
+  height: 100%;
+}
+
+.index-container .nav li a.router-link-active {
+  color: #dd6d60;
+}
+
+.index-container .nav li a.router-link-active .iconfont {
+  color: #dd6d60;
+}
+
+.index-container .main {
+  flex: 1;
+  background: rgba(242, 167, 116, 0.2);
+}
+
+.index-container .main > div {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.index-container .player {
+  background: #f1f3f4;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.index-container audio {
+  width: 100%;
+  border-radius: none;
+  outline: none;
+}
 
 </style>

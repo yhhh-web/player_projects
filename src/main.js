@@ -1,23 +1,19 @@
 import Vue from 'vue'
-
-
 Vue.config.productionTip = false
-
 Vue.use(VueRouter);
-import discovery from './components/03.discovery.vue'
-import playlists from './components/04.playlists.vue'
-import songs from './components/05.songs.vue'
-import mvs from './components/06.mvs.vue'
-import result from './components/07.result.vue'
-import playlist from './components/08.playlist.vue'
-import mv from './components/09.mv.vue'
+import discovery from './components/discovery.vue'
+import playlists from './components/playlists.vue'
+import songs from './components/songs.vue'
+import mvs from './components/mvs.vue'
+import result from './components/result.vue'
+import playlist from './components/playlist.vue'
+import mv from './components/mv.vue'
 //导入element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue'
 import VueRouter from 'vue-router'
 let router = new VueRouter({
-
 routes:[
 {
     path:"/discovery",

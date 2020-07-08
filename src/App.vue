@@ -7,8 +7,8 @@
 
 <script>
 //导入组件
-import top from './components/01.top.vue'
-import index from './components/02.index.vue'
+import top from './components/top.vue'
+import index from './components/index.vue'
 
 export default {
   name: 'app',
@@ -25,4 +25,23 @@ export default {
   margin:0;
   padding:0;
 }
+
+#app {
+  height: 100%;
+}
+
+#app .top-container {
+  height: 60px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#app .index-container {
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 </style>
