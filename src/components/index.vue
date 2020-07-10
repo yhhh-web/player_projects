@@ -26,7 +26,6 @@ export default {
 <style>
 
 .index-container {
-  /* display: flex; */
   width: 100%;
 }
 
@@ -36,7 +35,6 @@ export default {
 }
 
 .index-container .main > div {
-  /* max-width: 1100px; */
   margin: 0 auto;
 }
 
