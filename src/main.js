@@ -11,6 +11,7 @@ import mv from './components/mv.vue'
 //导入element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
+import 'element-ui/lib/theme-chalk/display.css';
 import App from './App.vue'
 import VueRouter from 'vue-router'
 let router = new VueRouter({
@@ -58,4 +59,5 @@ new Vue({
 
 
 
-import './assets/index.css'
+import '../public/css/index.css'
+import '../public/css/media.css'

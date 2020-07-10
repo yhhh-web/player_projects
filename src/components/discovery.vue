@@ -1,16 +1,26 @@
 <template>
+
   <div class="discovery-container">
     <!-- 轮播图 -->
-    <el-carousel class=""  :interval="4000" type="card">
+    <div class="carousel">
+    <el-row>
+  <el-col :span="24"> 
+        <el-carousel class=""  :interval="4000" type="card">
       <!-- 循环获取到的接口数据 -->
       <el-carousel-item v-for="(item, index) in banners" :key="index">
         <img :src="item.imageUrl" alt />
-      </el-carousel-item>
+      </el-carousel-item>     
     </el-carousel>
+      </el-col>
+</el-row>
+</div>
+     
     <!-- 推荐歌单 -->
+    
     <div class="recommend">
       <h3 class="title">推荐歌单</h3>
       <div class="items">
+
         <div class="item" v-for="(item, index) in list" :key="index">
           <div class="img-wrap">
             <div class="desc-wrap">
@@ -21,13 +31,16 @@
           </div>
           <p class="name">{{ item.name }}</p>
         </div>
+        
       </div>
     </div>
+   
     <!-- 最新音乐 -->
     <div class="news">
       <h3 class="title">最新音乐</h3>
       <div class="items">
-        <div class="item" v-for="(item, index) in songs" :key="index">
+       
+    <div class="item" v-for="(item, index) in songs" :key="index">
           <div class="img-wrap">
             <!-- 封面 -->
             <img :src="item.picUrl" alt />
@@ -40,6 +53,7 @@
             <div class="singer">{{ item.song.artists[0].name }}</div>
           </div>
         </div>
+  
       </div>
     </div>
     <!-- 推荐MV -->
@@ -150,6 +164,126 @@ export default {
 
 <style>
 
+
+/* iPhone 6/7/8/X */
+/* 平板 */
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  /* html {
+    font-size: 26.67px;
+  } */
+  
+/* .discovery-container .recommend {
+  margin-bottom: 40px;
+
+} */
+
+.discovery-container .recommend .items {
+  /* border:1px solid pink; */
+  width:100% !important; 
+  /* min-width: 620px; */
+  justify-content: space-around !important;
+  align-items: center !important;
+  display: flex !important;
+  flex-wrap: wrap;
+   margin:0 !important;
+}
+ 
+.discovery-container .recommend .items .item {
+  /* border:1px solid red; */
+  width: 43% !important;
+  margin: 10px;
+  /* flex-wrap: wrap; */
+  /* position: relative;
+  overflow: hidden; */
+}
+
+.discovery-container .recommend .items .item img {
+  width: 100%;
+  /* height: 15rem; */
+  border-radius: 5px;
+}
+
+.discovery-container .recommend .items .item .desc-wrap {
+  position: absolute;
+  width: 46%;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  max-height: 50px;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  top: -50px;
+}
+
+.discovery-container .recommend .items .item .desc-wrap span {
+  font-size: 14px;
+}
+
+.discovery-container .recommend .items .item:hover .desc-wrap {
+  top: 0;
+}
+
+.discovery-container .recommend .items .item .img-wrap {
+  position: relative;
+}
+
+.discovery-container .recommend .items .item .img-wrap .el-icon-caret-right {
+  position: absolute;
+  right: 10px;
+  bottom: 13px;
+  width: 40px;
+  height: 40px;
+  color: #dd6d60;
+  font-size: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+}
+
+.discovery-container .recommend .items .item .img-wrap .el-icon-caret-right::before {
+  transform: translateX(0px);
+}
+
+.discovery-container .recommend .items .item .img-wrap:hover .el-icon-caret-right {
+  opacity: 1;
+}
+
+.discovery-container .recommend .items .item .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 14px;
+}
+
+.discovery-container .news {
+  margin-bottom: 40px;
+}
+
+}
+
+/* .el-row {
+    margin: 0 !important;
+} */
+.discovery-container .carousel{
+  width:100%;
+  /* display:flex; */
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
 .discovery-container .el-carousel__container {
   height: 230px;
 }
@@ -171,19 +305,23 @@ export default {
 }
 
 .discovery-container .recommend .items {
+  /* width:100%; */
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
+  margin:10px;
 }
 
 .discovery-container .recommend .items .item {
-  width: 200px;
-  margin: 10px;
+  width: 19%;
+  /* margin: 0; */
   position: relative;
   overflow: hidden;
 }
 
 .discovery-container .recommend .items .item img {
-  width: 200px;
+  width: 100%;
   height: 200px;
   border-radius: 5px;
 }

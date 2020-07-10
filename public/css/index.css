@@ -1,0 +1,53 @@
+body,
+html {
+ 
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+ Microsoft YaHei, '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+  transition: 0.5s;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.iconfont {
+  cursor: pointer;
+}
+
+.el-tabs__active-bar {
+  background-color: #c3473a;
+}
+
+.el-tabs__item:hover,
+.el-tabs__item.is-active {
+  color: #c3473a;
+}
+
+.el-table th > .cell {
+  font-weight: normal;
+  color: black;
+}
+
+.el-pagination {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #dd6d60;
+}
