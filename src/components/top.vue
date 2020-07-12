@@ -195,7 +195,6 @@ export default {
 
 .top-container .nav li a {
   color: black;
-  padding: 0 30px;
   font-size: 18px;
   line-height: 60px;
   width: 100%;
