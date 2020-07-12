@@ -158,14 +158,14 @@ export default {
 </script>
 
 <style>
+
 /* iPhone 6/7/8/X */
 /* 平板 */
 
-@media screen and (min-width: 320px) and (max-width: 720px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   /* html {
     font-size: 26.67px;
   } */
-
   .discovery-container .recommend .items {
     width: 100% !important;
     justify-content: space-around !important;
@@ -311,7 +311,6 @@ export default {
 
 .discovery-container .recommend .items .item {
   width: 19%;
-
   position: relative;
   overflow: hidden;
 }
@@ -341,6 +340,7 @@ export default {
 }
 
 .discovery-container .recommend .items .item .desc-wrap span {
+  transition: 0.5s;
   font-size: 14px;
 }
 
@@ -353,6 +353,7 @@ export default {
 }
 
 .discovery-container .recommend .items .item .img-wrap .el-icon-caret-right {
+  transition: 0.5s;
   position: absolute;
   right: 10px;
   bottom: 13px;
@@ -417,6 +418,7 @@ export default {
 }
 
 .discovery-container .news .items .item:hover {
+  transition: 0.5s;
   background-color: #f5f5f5;
 }
 
@@ -439,6 +441,7 @@ export default {
 }
 
 .discovery-container .news .items .item .img-wrap .iconfont {
+  transition: 0.5s;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -456,6 +459,7 @@ export default {
 
 .discovery-container .news .items .item .img-wrap .iconfont::before {
   transform: translateX(0px);
+  transition: 0.5s;
 }
 
 .discovery-container .news .items .item .img-wrap:hover .iconfont {
