@@ -2,16 +2,27 @@
   <div class="discovery-container">
     <!-- 轮播图 -->
     <div class="carousel">
-      <el-row>
+      <el-row  class="hidden-xs-only">
         <el-col :span="24">
-          <el-carousel class :interval="4000" type="card">
+          <el-carousel class :interval="4000" type="card" >
             <!-- 循环获取到的接口数据 -->
             <el-carousel-item v-for="(item, index) in banners" :key="index">
               <img :src="item.imageUrl" alt />
             </el-carousel-item>
           </el-carousel>
+        
         </el-col>
+      
       </el-row>
+      <el-row class="hidden-sm-and-up">
+  <el-col :span="24" >
+          <el-carousel indicator-position="outside">
+    <el-carousel-item v-for="(item, index) in banners" :key="index">
+      <img :src="item.imageUrl" alt />
+    </el-carousel-item>
+  </el-carousel> 
+  </el-col>
+    </el-row>
     </div>
 
     <!-- 推荐歌单 -->
@@ -294,7 +305,7 @@ export default {
 .discovery-container .title {
   font-weight: normal;
   margin-bottom: 20px;
-  padding-left: 8px;
+  padding-left: 50px;
 }
 
 .discovery-container .recommend {

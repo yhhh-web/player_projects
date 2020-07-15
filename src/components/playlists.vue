@@ -153,6 +153,7 @@
       :total="total"
       :current-page="page"
       :page-size="10"
+      :pager-count="5"
     ></el-pagination>
   </div>
 </template>
@@ -166,6 +167,7 @@
       return {
         // 总条数
         total: 0,
+       
         // 页码
         page: 1,
         // 顶部的推荐歌单
@@ -173,7 +175,8 @@
         // 歌单列表
         list: [],
         // 当前选择的数据
-        tag: '全部'
+        tag: '全部',
+       
       }
     },
     // 侦听器
@@ -242,6 +245,14 @@
 </script>
 
 <style>
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .playlists-container .tab-container .tab-content .items .item {
+  
+
+   width: 36% !important;
+ 
+}
+}
 .playlists-container .top-card {
   padding: 20px;
   height: 200px;
@@ -321,6 +332,8 @@
 .playlists-container .tab-container .tab-bar {
   display: flex;
   justify-content: flex-end;
+  
+  flex-wrap: wrap;
 }
 
 .playlists-container .tab-container .tab-bar .item {
@@ -340,20 +353,27 @@
 
 .playlists-container .tab-container .tab-content .items {
   display: flex;
+ 
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .playlists-container .tab-container .tab-content .items .item {
-  width: 200px;
+  
   margin: 10px;
+   width: 17%;
   position: relative;
   overflow: hidden;
+
+  
   cursor: pointer;
 }
 
 .playlists-container .tab-container .tab-content .items .item img {
-  width: 200px;
-  height: 200px;
+   
+
+  width: 100%;
+
   border-radius: 5px;
 }
 
