@@ -1,28 +1,27 @@
 <template>
   <div class="discovery-container">
     <!-- 轮播图 -->
+    <!-- {{bannerHeight}} -->
     <div class="carousel">
-      <el-row  class="hidden-xs-only">
+      <el-row class="hidden-xs-only">
         <el-col :span="24">
-          <el-carousel class :interval="4000" type="card" >
+          <el-carousel :interval="4000" type="card">
             <!-- 循环获取到的接口数据 -->
             <el-carousel-item v-for="(item, index) in banners" :key="index">
               <img :src="item.imageUrl" alt />
             </el-carousel-item>
           </el-carousel>
-        
         </el-col>
-      
       </el-row>
       <el-row class="hidden-sm-and-up">
-  <el-col :span="24" >
-          <el-carousel indicator-position="outside">
-    <el-carousel-item v-for="(item, index) in banners" :key="index">
-      <img :src="item.imageUrl" alt />
-    </el-carousel-item>
-  </el-carousel> 
-  </el-col>
-    </el-row>
+        <el-col :span="24">
+          <el-carousel indicator-position="outside" :height="bannerHeight+'px'">
+            <el-carousel-item v-for="(item, index) in banners" :key="index">
+              <img ref="bannerHeight" @load="imgLoad" :src="item.imageUrl" alt />
+            </el-carousel-item>
+          </el-carousel>
+        </el-col>
+      </el-row>
     </div>
 
     <!-- 推荐歌单 -->
@@ -102,7 +101,8 @@ export default {
       // 最新音乐
       songs: [],
       // 推荐mv
-      mvs: []
+      mvs: [],
+      bannerHeight: ""
     };
   },
   created() {
@@ -163,16 +163,52 @@ export default {
         // 设置给父组件的 播放地址
         this.$parent.musicUrl = url;
       });
+    },
+    imgLoad() {
+      this.$nextTick(() => {
+        this.bannerHeight = this.$refs.bannerHeight[0].height;
+        console.log(this.$refs.bannerHeight[0].height);
+      });
     }
+  },
+  mounted() {
+    this.imgLoad();
+    window.addEventListener(
+      "resize",
+      () => {
+        this.bannerHeight = this.$refs.bannerHeight[0].height;
+        this.imgLoad();
+      },
+      false
+    );
   }
 };
 </script>
 
 <style>
-
 /* iPhone 6/7/8/X */
 /* 平板 */
 
+@media screen and (min-width: 900px) and (max-width: 1050px) {
+  .discovery-container .el-carousel__container {
+  height: 190px !important;
+}
+}
+@media screen and (min-width: 769px) and (max-width:901px) {
+  .discovery-container .el-carousel__container {
+  height: 170px !important;
+}
+}
+@media screen and (min-width: 1051px) and (max-width: 1280px) {
+  .discovery-container .el-carousel__container {
+  height: 230px !important;
+}
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .el-carousel__indicator--horizontal {
+    padding: 12px 1px !important;
+  }
+}
 @media screen and (min-width: 320px) and (max-width: 768px) {
   /* html {
     font-size: 26.67px;
@@ -193,6 +229,7 @@ export default {
 
   .discovery-container .recommend .items .item img {
     width: 100%;
+    height: auto;
     border-radius: 5px;
   }
 
@@ -293,12 +330,12 @@ export default {
 }
 
 .discovery-container .el-carousel__container {
-  height: 230px;
+  height: 270px;
 }
 
 .discovery-container .el-carousel__item img {
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -328,7 +365,7 @@ export default {
 
 .discovery-container .recommend .items .item img {
   width: 100%;
-  height: 200px;
+  height: auto;
   border-radius: 5px;
 }
 
@@ -546,6 +583,7 @@ export default {
 
 .discovery-container .mvs .items .item .img-wrap img {
   width: 100%;
+  height: auto;
   border-radius: 5px;
 }
 

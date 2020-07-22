@@ -278,7 +278,8 @@
   margin-bottom: 30px;
   vertical-align: baseline;
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
+  /* align-items: center; */
 }
 
 .mvs-container .filter-wrap > div span {
@@ -313,7 +314,7 @@
 
 .mvs-container .mvs .items {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
